@@ -1,0 +1,12 @@
+[user]
+	name = Abner Terribili
+	email = abner.terribili@gmail.com
+
+[alias]
+	ci = commit
+	br = branch
+	co = checkout
+	df = diff
+	st = status
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an, %cr)%Creset' --abbrev-commit --date=relative
+	ph = push origin HEAD
