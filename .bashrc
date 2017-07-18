@@ -1,5 +1,6 @@
 export HOME=~
-export PATH+="$HOME/.bin"
+export PATH+=":$HOME/.bin"
+export PATH+=":$HOME/Library/Android/sdk/platform-tools/"
 
 parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'

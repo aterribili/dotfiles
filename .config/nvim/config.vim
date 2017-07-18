@@ -6,6 +6,11 @@ set showmode
 " The encoding written to file
 set fileencoding=utf-8
 
+" Identation
+set smarttab
+set cindent
+autocmd FileType html,css,json,javascript,sh setlocal ai sw=2 ts=2 sta et fo=croql
+
 " Wrap lines is for fools
 set nowrap
 set linebreak
