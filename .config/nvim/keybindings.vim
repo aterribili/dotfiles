@@ -1,5 +1,5 @@
 " map jj to esc
-imap `` <ESC>
+imap jj <ESC>
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
@@ -8,3 +8,12 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 map <C-n> :NERDTreeToggle<CR>
+
+" Clear search (ctrl + c)
+map <C-c> <ESC>:noh<CR>
+
+" Better split switching (Ctrl-j, Ctrl-k, Ctrl-h, Ctrl-l)
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-H> <C-W>h
+map <C-L> <C-W>l

@@ -39,3 +39,7 @@ set wildignore+=.tags
 set wildignore+=log/**
 set wildignore+=tmp/**
 set wildignore+=node_modules/**
+
+" Make ctrlp ignore some directories
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+
