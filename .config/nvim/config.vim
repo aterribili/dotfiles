@@ -43,3 +43,10 @@ set wildignore+=node_modules/**
 " Make ctrlp ignore some directories
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
+" Setup Rainbow Parentheses
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
+
