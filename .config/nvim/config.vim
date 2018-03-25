@@ -1,5 +1,11 @@
 set nu
 
+set background=dark
+colors jellybeans
+let g:badwolf_darkgutter = 1
+
+source $HOME/.config/nvim/color.vim
+
 " Show current mode down the bottom
 set showmode
 
@@ -10,6 +16,7 @@ set fileencoding=utf-8
 set smarttab
 set cindent
 autocmd FileType html,css,json,javascript,sh setlocal ai sw=2 ts=2 sta et fo=croql
+autocmd FileType haskell source ~/.config/nvim/lsp.vim
 
 " Wrap lines is for fools
 set nowrap
@@ -19,6 +26,11 @@ set linebreak
 set noswapfile
 set nobackup
 set nowb
+
+" Global taboptions
+set tabstop=2
+set shiftwidth=2
+set expandtab
 
 " Persistent undo
 silent !mkdir ~/.vim/backups > /dev/null 2>&1
@@ -49,4 +61,19 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
+let g:better_whitespace_enabled=1
+let g:strip_whitespace_on_save=1
 
+" Automatically start language servers.
+let g:LanguageClient_autostart=1
+
+let g:LanguageClient_serverCommands = {
+  \ 'haskell': ['hie', '--lsp'],
+  \ }
+
+"" Setup deoplete
+let g:deoplete#enable_at_startup = 1
+"let g:deoplete#keyword_patterns = {}
+"let g:deoplete#keyword_patterns.clojure = '[\w!$%&*+/:<=>?@\^_~\-\.#]*'
+"
+"let g:deoplete#file#enable_buffer_path = 1

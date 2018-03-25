@@ -1,4 +1,4 @@
-" map jj to esc
+" map jj t
 imap jj <ESC>
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
@@ -17,3 +17,8 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-H> <C-W>h
 map <C-L> <C-W>l
+
+" Plugins
+nnoremap <space><space> :Files<CR>
+noremap <silent> <C-S> :update<CR>
+noremap <silent> <C-F> :Ag<CR>
