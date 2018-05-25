@@ -3,7 +3,6 @@ export PATH+=":$HOME/.bin"
 export PATH+=":$HOME/Library/Android/sdk/platform-tools/"
 export PATH+=":$HOME/.local/bin"
 export PATH="$HOME/.rbenv/bin:$PATH"
-export GITHUB_TOKEN=40a7fc51cabbb6f5a8724e084d2cae0abdf410c7
 
 parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'

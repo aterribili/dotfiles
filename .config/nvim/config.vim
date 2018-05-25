@@ -1,7 +1,6 @@
 set nu
-
 set background=dark
-"colors jellybeans
+
 let g:badwolf_darkgutter = 1
 let mapleader = ","
 
@@ -16,7 +15,7 @@ set fileencoding=utf-8
 " Identation
 set smarttab
 set cindent
-autocmd FileType html,css,json,javascript,sh setlocal ai sw=2 ts=2 sta et fo=croql
+autocmd FileType html,css,json,javascript,sh,base setlocal ai sw=2 ts=2 sta et fo=croql
 autocmd FileType haskell source ~/.config/nvim/lsp.vim
 
 " Wrap lines is for fools
@@ -53,15 +52,6 @@ set wildignore+=log/**
 set wildignore+=tmp/**
 set wildignore+=node_modules/**
 
-" Make ctrlp ignore some directories
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
-
-" Setup Rainbow Parentheses
-"au VimEnter * RainbowParenthesesToggle
-"au Syntax * RainbowParenthesesLoadRound
-"au Syntax * RainbowParenthesesLoadSquare
-"au Syntax * RainbowParenthesesLoadBraces
-
 " Setup Rainbow
 let g:rainbow_active = 1
 let g:rainbow_conf = {
@@ -87,6 +77,7 @@ let g:rainbow_conf = {
 	\	}
 	\}
 
+" Strip whitespace
 let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
 
