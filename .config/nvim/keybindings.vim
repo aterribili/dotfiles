@@ -22,3 +22,6 @@ map <C-L> <C-W>l
 nnoremap <space><space> :Files<CR>
 noremap <silent> <C-S> :update<CR>
 noremap <silent> <C-F> :Ag<CR>
+
+" Better navigation
+nnoremap <bs> <c-^>

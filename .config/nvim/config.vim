@@ -1,8 +1,9 @@
 set nu
 
 set background=dark
-colors jellybeans
+"colors jellybeans
 let g:badwolf_darkgutter = 1
+let mapleader = ","
 
 source $HOME/.config/nvim/color.vim
 
@@ -56,10 +57,35 @@ set wildignore+=node_modules/**
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 " Setup Rainbow Parentheses
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+"au VimEnter * RainbowParenthesesToggle
+"au Syntax * RainbowParenthesesLoadRound
+"au Syntax * RainbowParenthesesLoadSquare
+"au Syntax * RainbowParenthesesLoadBraces
+
+" Setup Rainbow
+let g:rainbow_active = 1
+let g:rainbow_conf = {
+	\	'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
+	\	'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
+	\	'operators': '_,_',
+	\	'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+	\	'separately': {
+	\		'*': {},
+	\		'tex': {
+	\			'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
+	\		},
+	\		'lisp': {
+	\			'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
+	\		},
+	\		'vim': {
+	\			'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
+	\		},
+	\		'html': {
+	\			'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
+	\		},
+	\		'css': 0,
+	\	}
+	\}
 
 let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
@@ -77,3 +103,27 @@ let g:deoplete#enable_at_startup = 1
 "let g:deoplete#keyword_patterns.clojure = '[\w!$%&*+/:<=>?@\^_~\-\.#]*'
 "
 "let g:deoplete#file#enable_buffer_path = 1
+"
+"configure the locations of projects. In this example:
+" - add directories satisfying '~/projects/*/*/.git'
+" - add only '~/.config/nvim'
+" - add directories satisfying '$GOPATH/src/github.com/libgit2/*'
+let g:contabs#project#locations = [
+  \ { 'path': '~/dev', 'depth': 1, 'git_only': 1 },
+  \ { 'path': '~/.config/nvim', 'depth': 0, 'git_only': 0 }
+  \]
+
+"command to change the current tab's workingdir
+command! -nargs=1 -complete=dir EP call contabs#project#edit(<q-args>)
+
+"command to open a new tab with some workingdir
+command! -nargs=1 -complete=dir TP call contabs#project#tabedit(<q-args>)
+
+"invoke fzf with the list of projects configured in g:contabs#project#locations
+"the enabled hotkeys are { 'ctrl-t': 'tabedit', 'ctrl-e, <cr>': 'edit' }
+nnoremap <silent> <C-p> :call contabs#project#select()<CR>
+
+"invoke fzf with the list of buffers of current tab's workingdir
+"the enabled hotkeys are { 'ctrl-t': 'tabedit', 'ctrl-e, <cr>': 'edit', 'ctrl-v': 'vsp', 'ctrl-x': 'sp' }
+nnoremap <silent> <C-b> :call contabs#buffer#select()<CR>
+
