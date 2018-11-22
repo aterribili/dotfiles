@@ -1,0 +1,17 @@
+# vim: syntax=sh
+
+function dynamodb_run() {
+    local aws_home=~/.aws
+    java -Djava.library.path=$aws_home/DynamoDBLocal_lib -jar $aws_home/DynamoDBLocal.jar -sharedDb
+}
+
+function dynamodb_list_tables() {
+  local PORT=${1:-8000}
+  aws dynamodb list-tables  --endpoint http://localhost:$PORT | jq '.TableNames | .[]'
+}
+
+function dynamodb_delete_tables() {
+  local PORT=${1:-8000}
+  dynamodb_list_tables $PORT | xargs -I {} sh -c "aws dynamodb delete-table  --endpoint http://localhost:8000 --table-name {}"
+}
+

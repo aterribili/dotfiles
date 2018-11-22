@@ -12,6 +12,12 @@ set showmode
 " The encoding written to file
 set fileencoding=utf-8
 
+" Enable the cursor line
+set cursorline
+
+" clipboard copy
+set clipboard=unnamedplus
+
 " Identation
 set smarttab
 set cindent

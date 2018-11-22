@@ -1,4 +1,4 @@
-" map jj t
+" map jj
 imap jj <ESC>
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
@@ -6,8 +6,6 @@ xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
-
-map <C-n> :NERDTreeToggle<CR>
 
 " Clear search (ctrl + c)
 map <C-c> <ESC>:noh<CR>

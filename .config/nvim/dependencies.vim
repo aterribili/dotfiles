@@ -25,5 +25,7 @@ Plug 'clojure-vim/acid.nvim'
 Plug 'fholiveira/vim-clojure-static',  { 'for': 'clojure', 'branch': 'hack-update'} | Plug 'clojure-vim/async-clj-highlight'
 Plug 'guns/vim-sexp', { 'for': 'clojure' } | Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'clojure' }
 Plug 'clojure-vim/async-clj-omni', { 'for': 'clojure' }
+Plug 'jreybert/vimagit'
+Plug 'leafgarland/typescript-vim'
 
 call plug#end()
