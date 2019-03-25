@@ -48,6 +48,7 @@ set wildmode=list:longest
 set wildmenu
 set wildignore=*.o,*.obj,*~
 set wildignore+=*vim/backups*
+set wildignore+=*.lsp/*
 set wildignore+=*sass-cache*
 set wildignore+=vendor/rails/**
 set wildignore+=vendor/cache/**
@@ -87,13 +88,6 @@ let g:rainbow_conf = {
 let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
 
-" Automatically start language servers.
-let g:LanguageClient_autostart=1
-
-let g:LanguageClient_serverCommands = {
-  \ 'haskell': ['hie', '--lsp'],
-  \ }
-
 "" Setup deoplete
 let g:deoplete#enable_at_startup = 1
 "let g:deoplete#keyword_patterns = {}
@@ -124,3 +118,5 @@ nnoremap <silent> <C-p> :call contabs#project#select()<CR>
 "the enabled hotkeys are { 'ctrl-t': 'tabedit', 'ctrl-e, <cr>': 'edit', 'ctrl-v': 'vsp', 'ctrl-x': 'sp' }
 nnoremap <silent> <C-b> :call contabs#buffer#select()<CR>
 
+"break lines
+set wrap

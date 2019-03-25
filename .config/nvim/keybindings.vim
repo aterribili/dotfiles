@@ -23,3 +23,19 @@ noremap <silent> <C-F> :Ag<CR>
 
 " Better navigation
 nnoremap <bs> <c-^>
+
+" Delete and send to a null register
+nnoremap <leader>d "_d
+
+" Open Magit
+nnoremap <silent> <C-g> :Magit<CR>
+
+" Exit on term mode
+tnoremap <Esc> <C-\><C-n>
+tnoremap jj <C-\><C-n>
+
+" Open a terminal in vertical mode
+noremap <silent> <C-e> :vs <bar> :term<CR>
+
+" Close current split
+noremap <silent> <C-x> :q<CR>

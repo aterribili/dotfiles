@@ -19,9 +19,9 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
     \ }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'keith/swift'
 
-Plug 'clojure-vim/acid.nvim'
 Plug 'fholiveira/vim-clojure-static',  { 'for': 'clojure', 'branch': 'hack-update'} | Plug 'clojure-vim/async-clj-highlight'
 Plug 'guns/vim-sexp', { 'for': 'clojure' } | Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': 'clojure' }
 Plug 'clojure-vim/async-clj-omni', { 'for': 'clojure' }

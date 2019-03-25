@@ -9,3 +9,7 @@ source $HOME/.config/nvim/plugins.vim
 
 " Keyboard stuff
 source $HOME/.config/nvim/keybindings.vim
+
+" Language server stuff
+source $HOME/.config/nvim/lsp.vim
+
