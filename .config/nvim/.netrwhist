@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/Users/aterribili/dev/dotfiles'
+let g:netrw_dirhist_9='/Users/aterribili/dev/stem'
+let g:netrw_dirhist_8='/Users/aterribili/dev/NeoSolarized'
+let g:netrw_dirhist_7='/Users/aterribili/dev/abncli'
+let g:netrw_dirhist_6='/Users/aterribili/.config/nvim'
+let g:netrw_dirhist_5='/Users/aterribili/dev/dockerfiles'
+let g:netrw_dirhist_4='/Users/aterribili/dev/nucli'
+let g:netrw_dirhist_3='/Users/aterribili/dev/jetty-extensions/src'
+let g:netrw_dirhist_2='/Users/aterribili/dev/jetty-extensions'
+let g:netrw_dirhist_1='/Users/aterribili/dev/digaxisApp'

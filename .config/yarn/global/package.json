@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@formicarium/cli": "^1.4.30"
+  }
+}

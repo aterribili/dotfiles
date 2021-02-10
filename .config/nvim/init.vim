@@ -13,3 +13,5 @@ source $HOME/.config/nvim/keybindings.vim
 " Language server stuff
 source $HOME/.config/nvim/lsp.vim
 
+" color
+source $HOME/.config/nvim/color.vim

@@ -1,10 +1,7 @@
 set nu
-set background=dark
 
 let g:badwolf_darkgutter = 1
 let mapleader = ","
-
-source $HOME/.config/nvim/color.vim
 
 " Show current mode down the bottom
 set showmode
@@ -21,14 +18,18 @@ set clipboard=unnamedplus
 " Identation
 set smarttab
 set cindent
-autocmd FileType html,css,json,javascript,sh,base setlocal ai sw=2 ts=2 sta et fo=croql
+autocmd FileType html,css,json,javascript,base,ruby setlocal ai sw=2 ts=2 sta et fo=croql
 autocmd FileType haskell source ~/.config/nvim/lsp.vim
+
+" add yaml stuffs
+"au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
+"autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 " Wrap lines is for fools
 set nowrap
 set linebreak
 
-" Disable saw files and things like that
+" Disable swap files
 set noswapfile
 set nobackup
 set nowb
@@ -58,6 +59,7 @@ set wildignore+=.tags
 set wildignore+=log/**
 set wildignore+=tmp/**
 set wildignore+=node_modules/**
+set wildignore+=target/**
 
 " Setup Rainbow
 let g:rainbow_active = 1
@@ -90,18 +92,10 @@ let g:strip_whitespace_on_save=1
 
 "" Setup deoplete
 let g:deoplete#enable_at_startup = 1
-"let g:deoplete#keyword_patterns = {}
-"let g:deoplete#keyword_patterns.clojure = '[\w!$%&*+/:<=>?@\^_~\-\.#]*'
-"
-"let g:deoplete#file#enable_buffer_path = 1
-"
-"configure the locations of projects. In this example:
-" - add directories satisfying '~/projects/*/*/.git'
-" - add only '~/.config/nvim'
-" - add directories satisfying '$GOPATH/src/github.com/libgit2/*'
 let g:contabs#project#locations = [
   \ { 'path': '~/dev', 'depth': 1, 'git_only': 1 },
-  \ { 'path': '~/.config/nvim', 'depth': 0, 'git_only': 0 }
+  \ { 'path': '~/.config/nvim', 'depth': 0, 'git_only': 0 },
+  \ { 'path': '~/', 'depth': 0, 'git_only': 0 }
   \]
 
 "command to change the current tab's workingdir
@@ -120,3 +114,10 @@ nnoremap <silent> <C-b> :call contabs#buffer#select()<CR>
 
 "break lines
 set wrap
+
+" Split opening
+set splitbelow
+set splitright
+
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1

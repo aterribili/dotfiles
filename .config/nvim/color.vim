@@ -23,3 +23,13 @@ call s:defn("g:terminal_color_14", "#8abeb7")
 call s:defn("g:terminal_color_15", "#c5c8c6")
 call s:defn("g:terminal_color_background", "#1d1f21")
 call s:defn("g:terminal_color_foreground", "#c5c8c6")
+
+" For Neovim 0.1.3 and 0.1.4
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+" Theme
+set termguicolors
+set background=light
+syntax enable
+
+colorscheme NeoSolarized

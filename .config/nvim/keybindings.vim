@@ -1,5 +1,6 @@
 " map jj
 imap jj <ESC>
+imap kk <ESC>
 
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
@@ -18,7 +19,7 @@ map <C-L> <C-W>l
 
 " Plugins
 nnoremap <space><space> :Files<CR>
-noremap <silent> <C-S> :update<CR>
+noremap <silent> <C-S> :update!<CR>
 noremap <silent> <C-F> :Ag<CR>
 
 " Better navigation
@@ -33,9 +34,10 @@ nnoremap <silent> <C-g> :Magit<CR>
 " Exit on term mode
 tnoremap <Esc> <C-\><C-n>
 tnoremap jj <C-\><C-n>
+tnoremap kk <C-\><C-n>
 
-" Open a terminal in vertical mode
-noremap <silent> <C-e> :vs <bar> :term<CR>
+" Open a terminal in horizontal mode
+noremap <silent> <C-e> :split <bar> :resize 20 <bar> :term <CR>
 
 " Close current split
 noremap <silent> <C-x> :q<CR>
